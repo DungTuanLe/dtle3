@@ -1,0 +1,78 @@
+body{
+    display: grid;
+    min-height: 100vh;
+    width: 100%;
+    grid-template: 1fr/ 25% 25% 1fr 25%;
+    grid-gap: .3em;
+    text-align: center;
+    grid-template-areas: 
+        "video picture bouncing rotate";
+}
+
+.video{
+    display: grid;
+    align-content: center;
+    
+    grid-area: video;
+}
+iframe{
+    transition: transform 2s ease;
+    height: 207px;
+    width: 80%;
+    box-shadow: 10px 10px 5px grey;
+}
+.imgContainer{
+    display: grid;
+    align-content: center;
+    grid-area: picture;
+    
+}
+img{
+    border-radius: 5px;
+    opacity: 0.5;
+    width: 100%;
+    background-size: cover;
+    transition: all 2s ease;
+}
+.bouncing{
+    display: grid;
+    align-content: center;
+    grid-area: bouncing;
+}
+.fas{
+    animation: moveupdown 3s ease-in-out infinite alternate;
+}
+.rotate{
+    display: grid;
+    align-content: center;
+}
+.block {
+    grid-area: rotate;
+    width: 207px;
+    height: 207px;
+    border-radius: 5px;
+    background-color: orange;
+    margin-top: 15px;
+    font-size: 1.8em;
+    color: orange;
+    transition: all 2s ease;
+}
+iframe:hover {
+  transform: scale(1.2);
+}
+img:hover{
+    opacity: 1;
+    box-shadow: 10px 10px 5px grey;
+}
+@keyframes moveupdown{
+  from{margin-bottom:50%;
+      color:blue;}
+  to{margin-top:50%;
+      color:red;}
+}
+.block:hover {
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+  color: white;
+}
